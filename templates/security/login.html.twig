@@ -16,16 +16,20 @@
                 </div>
             {% endif %}
 
-            <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-            <label for="inputEmail">Adresse e-mail</label>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-            <label for="inputPassword">Mot de passe</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+          <div class="login">
+  <div class="form">
+    <form class="login-form">
+     <h3 class="h3 mb-4 font-weight-normal">
+     <img loading= "lazy" width ="50" height="50" src="{{asset ('images/iconelog.png')}}"/> Connexion</h2>
+      <input type="email" placeholder="email" alue="{{ last_username }}" name="email" id="inputEmail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+      <input type="password" placeholder="mot de passe" name="password" id="inputPassword"  required />
+       <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-            <button class="btn btn-primary mt-2" type="submit">Connexion</button>
-        </form>
+      <button type="submit">connexion</button>
+    </form>  
+  </div>
+</div>
+</form>
     </div>
 
 {% endblock %}

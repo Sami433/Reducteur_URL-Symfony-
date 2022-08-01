@@ -8,8 +8,9 @@
             <div class="alert alert-danger" role="alert">{{ flashError }}</div>
         {% endfor %}
 
-        <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+        <h3 class="h3 mb-5 font-weight-normal"> <img loading= "lazy" width ="30" height="30" src="{{asset ('images/iconesign.png')}}"/>&nbsp;Inscription</h1>
 
+<div class="register">
         {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email, {
             label: 'Adresse e-mail'
@@ -17,8 +18,11 @@
         {{ form_row(registrationForm.plainPassword, {
             label: 'Mot de passe'
         }) }}
+        </div>
 
-        <button type="submit" class="btn btn-primary mt-2">Inscription</button>
+<div class="btn-register">
+        <button type="submit" class="btn btn-success mt-3">Inscription</button>
+        </div>
         {{ form_end(registrationForm) }}
     </div>
 {% endblock %}
