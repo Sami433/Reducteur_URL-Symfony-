@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Raccourcisseur d'URL - {% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+
+
+
+        <header>
+            <nav class="navbar">
+             
+            <a href="#" class="nav-logo"> <img loading= "lazy" width ="30" height="30" src="{{asset ('images/http.png')}}"/> &nbsp;Reducteur d'url</a>
+            <ul class="nav-links">
+              <li> <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Home</a></li>
+<li>
+              {% if is_granted('IS_AUTHENTICATED_FULLY') and app.user.urls.count > 0 %}
+                                    <a class="nav-link" href="{{ path('url_list') }}">Mes liens</a>
+                                {% endif %}</li>
+                <div class="d-flex">
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a class="btn btn-danger me-2" href="{{ path('app_logout') }}">Déconnexion</a>
+                            {% else %}
+                                <a class="btn btn-success me-2" href="{{ path('app_login') }}">Connexion</a>
+                                <a class="btn btn-success" href="{{ path('app_register') }}">Inscription</a>
+                            {% endif %}
+
+                        </div>
+
+            </ul>
+          </nav>
+        </header>
+
+        {% block body %}{% endblock %}
+    </body>
+</html>

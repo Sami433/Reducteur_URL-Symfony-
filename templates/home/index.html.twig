@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+  
+
+{% block body %}
+
+
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+   
+    <div class="carousel-inner">
+    <div class="overlay-image" style="background-image: url('images/fond.jpg');"></div>
+    
+      <div class="carousel-item active">
+      
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Réducteur d'URL</h1>
+            <p>Ce site vous permet de réduire les liens trop longs.</p>
+            <p><a class="btn btn-lg btn-success" href="{{ path('app_register') }}">Inscription</a></p>
+            
+          </div>
+        </div>
+      </div>
+     
+        </div>
+      </div>
+    
+ 
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+
+    <div class="row">
+      <div class="col-lg-4">
+       <img loading= "lazy" width ="320" height="180" src="{{asset ('images/image-1.jpg')}}"/>
+       <h2 class="fw-bold">Réduire votre URL</h2>
+        <p class="text-start">Copiez votre lien sur la barre de saisie en bas de la page d'accueil et cliquez sur réduire l'URL.</p>
+      
+      </div><!-- /.col-lg-4 -->
+
+
+      <div class="col-lg-4">
+         <img loading= "lazy" width ="320" height="180" src="{{asset ('images/image-2.jpg')}}"/>
+        <h2 class="fw-bold">Inscription</h2>
+       <p class="text-start">Vous pouvez vous inscrire et vous connecter pour accéder à plus de fonctionnalités.</p>
+      
+      </div><!-- /.col-lg-4 -->
+
+      <div class="col-lg-4">
+      <img loading= "lazy" width ="320" height="180" src="{{asset ('images/image-3.jpg')}}"/>
+        <h2 class="fw-bold">Mes liens</h2>
+        <p class="text-start">Sur la rubrique "Mes liens" accédez à l'historique et aux statistiques de vos liens une fois connecté.</p>
+      
+      </div><!-- /.col-lg-4 -->
+
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+    <section class="col col-lg-10 mx-auto mb-5">
+            <div class="card" id="shortenCard">
+                <div class="card-body bg-light">
+                    <form id="shortenForm">
+                        <div class="col">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-lg" name="url" id="url" placeholder="Votre adresse à réduire" autocomplete="off" required>
+                                <button type="submit" class="btn btn-lg btn-success" id="btnShortenUrl">Réduire l'URL</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Retour en haut</a></p>
+    <p>&copy; 2022 Réducteur d'URL</p>
+  </footer>
+</main>
+
+
+{% endblock %}
+
+ {% block javascripts %}
+            {{ encore_entry_script_tags('home') }}
+        {% endblock %}
